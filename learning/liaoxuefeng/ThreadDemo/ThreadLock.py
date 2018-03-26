@@ -12,14 +12,14 @@ def change_bal(value):
 
 
 def run_thread(n):
-    for x in range(300000):
+    for x in range(3000):
         lock.acquire()
         try:
             change_bal(n)
         finally:
             lock.release()
 
-            
+
 if __name__ == '__main__':
     t1 = threading.Thread(target=run_thread, args=(5,))
     t2 = threading.Thread(target=run_thread, args=(8,))
